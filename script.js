@@ -9,6 +9,7 @@ function clickPerAccendere() {
 
     let urlAccesa = `
         <img src="${imgLampadinaAccesa}" alt="luce accesa">
+        <button id="bottone">Spegni</button>
     `;
     statoLampadina.innerHTML = urlAccesa;
     
