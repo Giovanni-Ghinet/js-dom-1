@@ -9,15 +9,36 @@ function clickPerAccendere() {
 
     let urlAccesa = `
         <img src="${imgLampadinaAccesa}" alt="luce accesa">
-        <button id="bottone">Spegni</button>
+        <button id="bottoneSpento">Spegni</button>
     `;
     statoLampadina.innerHTML = urlAccesa;
-    
+    const bottonePerSpegnere = document.querySelector('#bottoneSpento');
+    bottonePerSpegnere.addEventListener(
+    'click', clickPerSpegnere
+)
 }
 
+function clickPerSpegnere() {
+    console.log('Luce spenta');
+
+    const imgLampadinaSpenta = "./img/white_lamp.png"
+
+    let urlSpenta = `
+        <img src="${imgLampadinaSpenta}" alt="luce spenta">
+        <button id="bottone">accendi</button>
+    `;
+    statoLampadina.innerHTML = urlSpenta;
+    
+    const bottonePerAccendere = document.querySelector('#bottone');
+    bottonePerAccendere.addEventListener(
+        'click', clickPerAccendere
+    )
+}
 
 
 bottonePerAccendere.addEventListener(
     'click', clickPerAccendere
 )
+
+
 
