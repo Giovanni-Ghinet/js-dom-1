@@ -1,11 +1,20 @@
 const bottonePerAccendere = document.querySelector('#bottone');
-const StatoLampadina = document.querySelector('#lampadina');
+const statoLampadina = document.querySelector('#lampadina');
 
 
 function clickPerAccendere() {
-    console.log('Bottone per accendere la lampadina');
+    console.log('Luce accesa');
+
+    const imgLampadinaAccesa = "./img/yellow_lamp.png"
+
+    let urlAccesa = `
+        <img src="${imgLampadinaAccesa}" alt="luce accesa">
+    `;
+    statoLampadina.innerHTML = urlAccesa;
     
 }
+
+
 
 bottonePerAccendere.addEventListener(
     'click', clickPerAccendere
