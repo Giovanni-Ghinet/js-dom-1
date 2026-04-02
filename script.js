@@ -3,37 +3,26 @@ const statoLampadina = document.querySelector('#lampadina');
 
 
 function clickPerAccendere() {
-    console.log('Luce accesa');
+  const html = statoLampadina.innerHTML;
 
-    const imgLampadinaAccesa = "./img/yellow_lamp.png"
-
-    let urlAccesa = `
-        <img src="${imgLampadinaAccesa}" alt="luce accesa">
-        <button id="bottoneSpento">Spegni</button>
-    `;
-    statoLampadina.innerHTML = urlAccesa;
-    const bottonePerSpegnere = document.querySelector('#bottoneSpento');
-    bottonePerSpegnere.addEventListener(
-    'click', clickPerSpegnere
-)
-}
-
-function clickPerSpegnere() {
-    console.log('Luce spenta');
-
-    const imgLampadinaSpenta = "./img/white_lamp.png"
-
-    let urlSpenta = `
-        <img src="${imgLampadinaSpenta}" alt="luce spenta">
-        <button id="bottone">accendi</button>
+  if (html.includes('yellow_lamp.png')) {
+    // lampadina accesa → la spengo
+    const urlSpenta = `
+      <img class="dimensione-immagine" src="./img/white_lamp.png" alt="luce spenta">
     `;
     statoLampadina.innerHTML = urlSpenta;
-    
-    const bottonePerAccendere = document.querySelector('#bottone');
-    bottonePerAccendere.addEventListener(
-        'click', clickPerAccendere
-    )
+    bottonePerAccendere.textContent = 'Accendi';
+  }
+  else if (html.includes('white_lamp.png')) {
+    // lampadina spenta → la accendo
+    const urlAccesa = `
+      <img class="dimensione-immagine" src="./img/yellow_lamp.png" alt="luce accesa">
+    `;
+    statoLampadina.innerHTML = urlAccesa;
+    bottonePerAccendere.textContent = 'Spegni';
+  }
 }
+
 
 
 bottonePerAccendere.addEventListener(

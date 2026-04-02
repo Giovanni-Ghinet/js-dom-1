@@ -1,0 +1,12 @@
+.dimensione-immagine{
+    width: 300px;
+    
+}
+
+.stile-bottone{
+    padding: 10px;
+    border-radius: 15px;
+    color: rgb(210, 221, 53);
+    background-color: rgb(253, 37, 206);
+}
+
